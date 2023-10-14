@@ -1,0 +1,241 @@
+.hidden {
+  display: none;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/** Styles for "main" section. */
+
+.main {
+  height: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-image: url(images/cover.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative;
+  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.5);
+}
+
+.outer-header {
+  padding: 150px 0 0 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.text {
+  width: 767px;
+}
+
+.player-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.player-wrapper .control {
+  text-align: center;
+  margin: 30px 30px;
+  padding: 0;
+  position: relative;
+  border: none;
+  height: 96px;
+  width: 96px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.player-wrapper .control svg {
+  height: 100%;
+  width: 100%;
+  fill: white;
+}
+
+#song-title {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: opacity 300ms, visibility 300ms;
+}
+
+#song-title.hidden {
+  opacity: 0;
+  visibility: none;
+}
+
+#song-progress-bar-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  right: 0;
+  overflow: hidden;
+}
+
+#song-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: white;
+  height: 5px;
+  right: 0;
+  border-top-right-radius: 3px;
+}
+
+#song-progress-bar.reset {
+  transition: transform 100ms;
+}
+
+.link-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.link {
+  text-align: center;
+  margin: 30px 30px;
+  position: relative;
+}
+
+.link-icon {
+  height: 96px;
+  width: 96px;
+  border-radius: 50%;
+  fill: white;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  z-index: -1;
+  border-radius: 50%;
+  height: 62px;
+  width: 62px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/** Styles for "contact" section. */
+
+.contact {
+  background-image: url(images/twinkle_twinkle_@2X.png);
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode: hard-light;
+  background-repeat: repeat;
+  padding: 50px;
+}
+
+.contact-details {
+  display: block;
+  margin: 0;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  text-align: right;
+  font-size: 24px;
+  line-height: 1em;
+}
+
+.contact-details a {
+  color: white;
+}
+
+/* Medium size styling */
+
+@media (max-width: 1400px) {
+  .outer-header {
+    padding-top: 100px;
+  }
+
+  .player-wrapper .control,
+  .link-icon {
+    height: 64px;
+    width: 64px;
+  }
+
+  #song-title {
+    font-size: 20px;
+  }
+
+  .link {
+    margin: 20px;
+  }
+
+  .contact {
+    padding: 40px;
+  }
+
+  .contact-details {
+    font-size: 16px;
+  }
+}
+
+/* Small (mobile) size styling */
+
+@media (max-width: 767px) {
+  .text {
+    width: 100%;
+  }
+
+  .player-wrapper,
+  #song-progress-bar-wrapper {
+    display: none;
+  }
+
+  .outer-header {
+    padding-top: 70px;
+  }
+
+  .link-wrapper {
+    left: 20px;
+    justify-content: space-evenly;
+  }
+
+  .player-wrapper .control,
+  .link-icon {
+    height: 64px;
+    width: 64px;
+  }
+
+  .contact {
+    padding: 32px 0;
+  }
+
+  .contact-details {
+    text-align: center;
+  }
+}
+
+/* Super-small size style */
+
+@media (max-width: 400px) {
+  .link-wrapper {
+    left: 0;
+    right: 0;
+  }
+
+  .link {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
